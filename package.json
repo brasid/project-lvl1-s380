@@ -2,7 +2,12 @@
   "name": "brasid_brain_games",
   "version": "1.0.2",
   "description": "A small console game from hexlet.io",
-  "main": "index.js",
+  "keywords": [
+    "game",
+    "learning",
+    "hexlet",
+    "js"
+  ],
   "bin": {
     "brain-games": "dist/bin/brain-games.js"
   },
