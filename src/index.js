@@ -29,5 +29,5 @@ const answerNum = (round) => {
 
 
 export {
-  greeting, hiName, answerNum, rulesBrainEven
+  greeting, hiName, answerNum, rulesBrainEven,
 };
