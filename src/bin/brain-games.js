@@ -2,5 +2,5 @@
 
 import { greeting, hiName } from '..';
 
-console.log(greeting);
-console.log(hiName());
+greeting();
+hiName();
