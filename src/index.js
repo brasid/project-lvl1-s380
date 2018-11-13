@@ -8,7 +8,7 @@ const hiName = () => {
   return (`Hello, ${askName}!`);
 };
 
-// step four (unfinished)
+// step four
 const brainEven = () => {
   console.log('Answer "yes" if number even otherwise answer "no".');
   const askName = readlineSync.question('May I have your name? '); // function calls itself prime to any others if it's not inside other function
