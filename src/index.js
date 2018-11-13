@@ -16,9 +16,10 @@ const getRandom = () => Math.floor(Math.random() * 100);
 const brainEven = () => {
   console.log('Answer "yes" if number even, otherwise answer "no".');
   const name = readlineSync.question('May I have your name? '); // function calls itself prime to any others if it's not inside other function
+  const attemptsCount = 1;
 
-  const attemptsCount = (attempt) => {
-    if (attempt > 3) {
+  const attempts = (count) => {
+    if (count > 3) {
       return console.log(`Congratilations, ${name}!`);
     }
     const random = getRandom();
@@ -27,11 +28,11 @@ const brainEven = () => {
     const correctAnswer = (isEven(random)) ? 'yes' : 'no';
     if (userAnswer === correctAnswer) {
       console.log('Correct!');
-      return attemptsCount(attempt + 1);
+      return attemptsCount(count + 1);
     }
     return console.log(`'${userAnswer}' is wrong answer ;(. Correct answer was '${correctAnswer}'.\nLet's try again, ${name}`);
   };
-  return attemptsCount(1);
+  return attempts(attemptsCount);
 };
 
 export {
