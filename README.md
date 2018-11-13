@@ -8,14 +8,13 @@
 Данный учебный проект организован компанией Hexlet.io. Он, в первую очередь, нацелен на знакомство с экосистемой JavaScript. В рамках проекта необходимо реализовать набор мини-игр, запускаемых из консоли. Эти игры похожи на то, что обычно называют "Brain Games".
 
 Ментор проекта - Александр О.
-## 
+##
 
 ## Установка
 ```sh
-$ make install
+$ npm install -g brasid_brain_games
 ```
-[![asciicast](https://asciinema.org/a/Drl2uaBP8QNBuFj8cKo1cycIR.svg)](https://asciinema.org/a/Drl2uaBP8QNBuFj8cKo1cycIR)
-
+[![asciicast](https://asciinema.org/a/211582.svg)](https://asciinema.org/a/211582)
 ## Игра: "Проверка на четность"
 
 Задача игрока ответить 'yes', если число четное, и 'no', если число нечетное
@@ -24,4 +23,4 @@ $ make install
 ```sh
 $ brain-even
 ```
-[![asciicast](https://asciinema.org/a/06N85JtQP2UcF5Bny6f4sDfrF.svg)](https://asciinema.org/a/06N85JtQP2UcF5Bny6f4sDfrF)
+[![asciicast](https://asciinema.org/a/211583.svg)](https://asciinema.org/a/211583)
