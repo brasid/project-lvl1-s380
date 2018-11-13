@@ -4,30 +4,33 @@ import readlineSync from 'readline-sync';
 const greeting = 'Welcome to the Brain Games!';
 
 const hiName = () => {
-  const askName = readlineSync.question('May I have your name? ');
+  const askName = readlineSync.question('May I have your name? ');// function calls itself prime to any others if it's not inside other function
   return (`Hello, ${askName}!`);
 };
 
 // step four (unfinished)
-const rulesBrainEven = 'Answer "yes" if number even otherwise answer "no".';
+const brainEven = () => {
+  console.log('Answer "yes" if number even otherwise answer "no".');
+  const askName = readlineSync.question('May I have your name? '); // function calls itself prime to any others if it's not inside other function
 
-
-const answerNum = (round) => {
-  const askName = readlineSync.question('May I have your name? ');
-  const randomNumber = Math.floor(Math.random() * 100);
-  console.log(`Question: ${randomNumber}`);
-  const userAnswer = readlineSync.question('Your answer: ');
-  const correctAnswer = (randomNumber % 2 === 0) ? 'yes' : 'no';
-  if (userAnswer === correctAnswer) {
-    console.log('Correct!');
-    return (round - 1 > 0) ? answerNum(round - 1) : console.log(`Congratilations, ${askName}!`);
-  }
-  console.log(`'${userAnswer}' is wrong answer ;(. Correct answer was '${correctAnswer}'.`);
-  console.log(`Let's try again, ${askName}`);
-  return answerNum(round);
+  const answerNum = (round, randomNumber) => {
+    if (round === 0) {
+      return (`Congratilations, ${askName}!`);
+    }
+    console.log(`Question: ${randomNumber}`);
+    const userAnswer = readlineSync.question('Your answer: ');
+    const correctAnswer = (randomNumber % 2 === 0) ? 'yes' : 'no';
+    if (userAnswer === correctAnswer) {
+      console.log('Correct!');
+      return answerNum(round - 1, Math.floor(Math.random() * 100));
+    }
+    console.log(`'${userAnswer}' is wrong answer ;(. Correct answer was '${correctAnswer}'.`);
+    console.log(`Let's try again, ${askName}`);
+    return answerNum(round, Math.floor(Math.random() * 100));
+  };
+  return answerNum(3, Math.floor(Math.random() * 100));
 };
 
-
 export {
-  greeting, hiName, answerNum, rulesBrainEven,
+  greeting, hiName, brainEven,
 };
