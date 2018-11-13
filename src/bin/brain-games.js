@@ -1,4 +1,5 @@
 #!/usr/bin/env node
 import { greeting, hiName } from '..';
 
-const welcome = greeting() + hiName();
+console.log(greeting);
+console.log(hiName());
