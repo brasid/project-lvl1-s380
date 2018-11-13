@@ -14,7 +14,7 @@
 ```sh
 $ make install
 ```
-<script id="asciicast-HHffmRhunomxQbFDWjwatABcg" src="https://asciinema.org/a/HHffmRhunomxQbFDWjwatABcg.js" async></script>
+[![asciicast](https://asciinema.org/a/HHffmRhunomxQbFDWjwatABcg.svg)](https://asciinema.org/a/HHffmRhunomxQbFDWjwatABcg)
 
 ##Игра: "Проверка на четность"
 Суть игры в следующем: пользователю показывается случайное число. И ему нужно ответить yes, если число чётное, или no — если нечётное. 
@@ -23,4 +23,4 @@ $ make install
 ```sh
 $ brain-even
 ```
-<script id="asciicast-QoX52ugNnxXe1fv08U0wzUHNd" src="https://asciinema.org/a/QoX52ugNnxXe1fv08U0wzUHNd.js" async></script>
+[![asciicast](https://asciinema.org/a/QoX52ugNnxXe1fv08U0wzUHNd.svg)](https://asciinema.org/a/QoX52ugNnxXe1fv08U0wzUHNd)
