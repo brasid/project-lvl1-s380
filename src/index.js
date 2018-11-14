@@ -2,12 +2,11 @@ import readlineSync from 'readline-sync';
 import { car, cdr } from 'hexlet-pairs';
 
 const playGame = (taskAndAnswer, gameRule) => {
-
   const doGreeting = () => {
     console.log('Welcome to the Brain Games!\n');
     console.log(`${gameRule}\n`);
     const playerName = readlineSync.question('May I have your name? ');
-    console.log(`Hello, ${playerName}!\n`)
+    console.log(`Hello, ${playerName}!\n`);
     return (playerName);
   };
 
@@ -26,8 +25,6 @@ const playGame = (taskAndAnswer, gameRule) => {
   const replyToVictory = playerName => console.log(`Congratulations, ${playerName}!\n`);
 
   const gameProcess = (playerName) => {
-    const firstRound = 1;
-    const lastRound = 3;
     const endGame = (round, lastRound, playerName) => {
       if (round > lastRound) {
         return replyToVictory(playerName);
@@ -42,6 +39,8 @@ const playGame = (taskAndAnswer, gameRule) => {
       replyToCorrectAnswer(playerAnswer);
       return endGame(round + 1, lastRound, playerName);
     };
+    const firstRound = 1;
+    const lastRound = 3;
     return endGame(firstRound, lastRound, playerName);
   };
 
