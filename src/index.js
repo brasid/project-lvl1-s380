@@ -1,40 +1,52 @@
 import readlineSync from 'readline-sync';
+import { car, cdr } from 'hexlet-pairs';
 
-// step two
-const greeting = () => console.log('Welcome to the Brain Games!');
+const playGame = (taskAndAnswer, gameRule) => {
 
-const hiName = () => {
-  const name = readlineSync.question('May I have your name? ');// function calls itself prime to any others if it's not inside other function
-  return (`Hello, ${name}!`);
-};
-
-// step four
-const isEven = number => (number % 2 === 0);
-
-const getRandom = () => Math.floor(Math.random() * 100);
-
-const brainEven = () => {
-  console.log('Answer "yes" if number even, otherwise answer "no".');
-  const name = readlineSync.question('May I have your name? '); // function calls itself prime to any others if it's not inside other function
-  const attemptsCount = 1;
-
-  const attempts = (count) => {
-    if (count > 3) {
-      return console.log(`Congratilations, ${name}!`);
-    }
-    const random = getRandom();
-    console.log(`Question: ${random}`);
-    const userAnswer = readlineSync.question('Your answer: ');
-    const correctAnswer = (isEven(random)) ? 'yes' : 'no';
-    if (userAnswer === correctAnswer) {
-      console.log('Correct!');
-      return attemptsCount(count + 1);
-    }
-    return console.log(`'${userAnswer}' is wrong answer ;(. Correct answer was '${correctAnswer}'.\nLet's try again, ${name}`);
+  const doGreeting = () => {
+    console.log('Welcome to the Brain Games!\n');
+    console.log(`${gameRule}\n`);
+    const playerName = readlineSync.question('May I have your name? ');
+    console.log(`Hello, ${playerName}!\n`)
+    return (playerName);
   };
-  return attempts(attemptsCount);
+
+  const isPlayerRight = (playerAnswer, correctAnswer) => (playerAnswer === String(correctAnswer));
+
+  const replyToCorrectAnswer = (playerAnswer) => {
+    console.log(`Your answer: ${playerAnswer}`);
+    console.log('Correct!\n');
+  };
+
+  const replyToWrongAnswer = (playerAnswer, correctAnswer, playerName) => {
+    console.log(`'${playerAnswer}' is wrong answer ;(. Correct answer was '${correctAnswer}'.`);
+    console.log(`Let's try again, ${playerName}\n`);
+  };
+
+  const replyToVictory = playerName => console.log(`Congratulations, ${playerName}!\n`);
+
+  const gameProcess = (playerName) => {
+    const firstRound = 1;
+    const lastRound = 3;
+    const endGame = (round, lastRound, playerName) => {
+      if (round > lastRound) {
+        return replyToVictory(playerName);
+      }
+      const getTaskAndAnswer = taskAndAnswer();
+      const gameTask = car(getTaskAndAnswer);
+      const correctAnswer = cdr(getTaskAndAnswer);
+      const playerAnswer = readlineSync.question(gameTask);
+      if (!isPlayerRight(playerAnswer, correctAnswer)) {
+        return replyToWrongAnswer(playerAnswer, correctAnswer);
+      }
+      replyToCorrectAnswer(playerAnswer);
+      return endGame(round + 1, lastRound, playerName);
+    };
+    return endGame(firstRound, lastRound, playerName);
+  };
+
+  const playerName = doGreeting();
+  gameProcess(playerName);
 };
 
-export {
-  greeting, hiName, brainEven,
-};
+export default playGame;
