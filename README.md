@@ -17,10 +17,21 @@ $ npm install -g brasid_brain_games
 [![asciicast](https://asciinema.org/a/211582.svg)](https://asciinema.org/a/211582)
 ## Игра: "Проверка на четность"
 
-Задача игрока ответить 'yes', если число четное, и 'no', если число нечетное
+Задача игрока - ответить 'yes', если число четное, и 'no', если число нечетное
 
 ### Запуск игры
 ```sh
 $ brain-even
 ```
 [![asciicast](https://asciinema.org/a/211583.svg)](https://asciinema.org/a/211583)
+
+
+## Игра: "Калькулятор"
+
+Задача игрока - верно вычислить случайное математическое выражение и записать ответ
+
+### Запуск игры
+```sh
+$ brain-calc
+```
+[![asciicast](https://asciinema.org/a/211736.svg)](https://asciinema.org/a/211736)
