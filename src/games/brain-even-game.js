@@ -1,10 +1,12 @@
 import { cons } from 'hexlet-pairs';
-import { isEven, getRandomNum } from '../math';
+import getRandomNum from '../math';
 import playGame from '..';
+
+const isEven = number => (number % 2 === 0);
 
 const taskAndAnswer = () => {
   const randomNum = getRandomNum();
-  const gameTask = `Question: ${randomNum} `;
+  const gameTask = `${randomNum}`;
   const correctAnswer = (isEven(randomNum)) ? 'yes' : 'no';
   return cons(gameTask, correctAnswer);
 };
