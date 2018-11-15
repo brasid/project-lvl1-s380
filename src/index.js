@@ -34,9 +34,10 @@ const playGame = (taskAndAnswer, gameRule) => {
     return (getRoundResult(playerName)) ? isPlayerWin(round + 1, lastRound, playerName) : false;
   };
 
+  const firstRound = 1;
+  const lastRound = 3;
+
   const gameProcess = (playerName) => {
-    const firstRound = 1;
-    const lastRound = 3;
     if (isPlayerWin(firstRound, lastRound, playerName)) {
       console.log(`Congratulations, ${playerName}!\n`);
     } else {
