@@ -45,3 +45,12 @@ $ brain-calc
 $ brain-gcd
 ```
 [![asciicast](https://asciinema.org/a/211890.svg)](https://asciinema.org/a/211890)
+
+## Игра: "Арифметическая прогрессия"
+
+Задача игрока - найти недостающее звено арифметической прогрессии
+
+### Запуск игры
+```sh
+$ brain-progression
+```
