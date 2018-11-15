@@ -3,10 +3,9 @@ import { car, cdr } from 'hexlet-pairs';
 
 const playGame = (taskAndAnswer, gameRule) => {
   const doGreeting = () => {
-    console.log('Welcome to the Brain Games!\n');
-    console.log(`${gameRule}\n`);
+    console.log(`Welcome to the Brain Games!\n${gameRule}`);
     const playerName = readlineSync.question('May I have your name? ');
-    console.log(`Hello, ${playerName}!\n`);
+    console.log(`Hello, ${playerName}!`);
     return (playerName);
   };
 
@@ -17,12 +16,10 @@ const playGame = (taskAndAnswer, gameRule) => {
     const correctAnswer = cdr(getTaskAndAnswer);
     const playerAnswer = readlineSync.question(gameTask);
     if (playerAnswer !== String(correctAnswer)) {
-      console.log(`'${playerAnswer}' is wrong answer ;(. Correct answer was '${correctAnswer}'.`);
-      console.log(`Let's try again, ${playerName}\n`);
+      console.log(`'${playerAnswer}' is wrong answer ;(. Correct answer was '${correctAnswer}'.\nLet's try again, ${playerName}`);
       isRoundPassed = false;
     } else {
-      console.log(`Your answer: ${playerAnswer}`);
-      console.log('Correct!\n');
+      console.log(`Your answer: ${playerAnswer}\nCorrect!`);
     }
     return isRoundPassed;
   };

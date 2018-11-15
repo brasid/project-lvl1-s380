@@ -1,36 +1,21 @@
 import { cons } from 'hexlet-pairs';
-import getRandomNum from '../math';
+import getRandomNum from '../utils';
 import playGame from '..';
 
-const getRandomOperator = () => {
-  const num = Math.floor(Math.random() * 3); // expect output 0, 1 or 2
-  switch (num) {
-    case (0):
-      return '+';
-    case (1):
-      return '-';
-    default:
-      return '*';
-  }
-};
-
-const doCalculation = (num1, num2, operator) => {
-  switch (operator) {
-    case ('+'):
-      return num1 + num2;
-    case ('-'):
-      return num1 - num2;
-    default:
-      return num1 * num2;
-  }
-};
 
 const taskAndAnswer = () => {
-  const firstNum = getRandomNum();
-  const secondNum = getRandomNum();
-  const randomOperator = getRandomOperator();
+  const firstNum = getRandomNum(1, 100);
+  const secondNum = getRandomNum(1, 100);
+  let randomOperator = '*';
+  let correctAnswer = firstNum * secondNum;
+  if (getRandomNum(0, 2) === 0) {
+    randomOperator = '+';
+    correctAnswer = firstNum + secondNum;
+  } else if (getRandomNum(0, 2) === 1) {
+    randomOperator = '-';
+    correctAnswer = firstNum - secondNum;
+  }
   const gameTask = `${firstNum} ${randomOperator} ${secondNum}`;
-  const correctAnswer = doCalculation(firstNum, secondNum, randomOperator);
   return cons(gameTask, correctAnswer);
 };
 
