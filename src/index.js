@@ -10,38 +10,38 @@ const playGame = (taskAndAnswer, gameRule) => {
     return (playerName);
   };
 
-  const isPlayerRight = (playerAnswer, correctAnswer) => (playerAnswer === String(correctAnswer));
-
-  const replyToCorrectAnswer = (playerAnswer) => {
-    console.log(`Your answer: ${playerAnswer}`);
-    console.log('Correct!\n');
+  const getRoundResult = (playerName) => {
+    let isRoundPassed = true;
+    const getTaskAndAnswer = taskAndAnswer();
+    const gameTask = `Question ${car(getTaskAndAnswer)}  `;
+    const correctAnswer = cdr(getTaskAndAnswer);
+    const playerAnswer = readlineSync.question(gameTask);
+    if (playerAnswer !== String(correctAnswer)) {
+      console.log(`'${playerAnswer}' is wrong answer ;(. Correct answer was '${correctAnswer}'.`);
+      console.log(`Let's try again, ${playerName}\n`);
+      isRoundPassed = false;
+    } else {
+      console.log(`Your answer: ${playerAnswer}`);
+      console.log('Correct!\n');
+    }
+    return isRoundPassed;
   };
 
-  const replyToWrongAnswer = (playerAnswer, correctAnswer, playerName) => {
-    console.log(`'${playerAnswer}' is wrong answer ;(. Correct answer was '${correctAnswer}'.`);
-    console.log(`Let's try again, ${playerName}\n`);
+  const isPlayerWin = (round, lastRound, playerName) => {
+    if (round > lastRound) {
+      return true;
+    }
+    return (getRoundResult(playerName)) ? isPlayerWin(round + 1, lastRound, playerName) : false;
   };
-
-  const replyToVictory = playerName => console.log(`Congratulations, ${playerName}!\n`);
 
   const gameProcess = (playerName) => {
-    const endGame = (round, lastRound, playerName) => {
-      if (round > lastRound) {
-        return replyToVictory(playerName);
-      }
-      const getTaskAndAnswer = taskAndAnswer();
-      const gameTask = car(getTaskAndAnswer);
-      const correctAnswer = cdr(getTaskAndAnswer);
-      const playerAnswer = readlineSync.question(gameTask);
-      if (!isPlayerRight(playerAnswer, correctAnswer)) {
-        return replyToWrongAnswer(playerAnswer, correctAnswer);
-      }
-      replyToCorrectAnswer(playerAnswer);
-      return endGame(round + 1, lastRound, playerName);
-    };
     const firstRound = 1;
     const lastRound = 3;
-    return endGame(firstRound, lastRound, playerName);
+    if (isPlayerWin(firstRound, lastRound, playerName)) {
+      console.log(`Congratulations, ${playerName}!\n`);
+    } else {
+      console.log('I\'m sorry, little one.');
+    }
   };
 
   const playerName = doGreeting();
