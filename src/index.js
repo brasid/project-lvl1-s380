@@ -28,7 +28,6 @@ const playGame = (taskAndAnswer, gameRule) => {
   } else {
     console.log('I\'m sorry, little one.');
   }
-  return (playerName);
 };
 
 export default playGame;
