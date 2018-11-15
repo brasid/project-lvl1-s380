@@ -54,3 +54,4 @@ $ brain-gcd
 ```sh
 $ brain-progression
 ```
+[![asciicast](https://asciinema.org/a/211905.svg)](https://asciinema.org/a/211905)
