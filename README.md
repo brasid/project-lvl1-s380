@@ -35,3 +35,13 @@ $ brain-even
 $ brain-calc
 ```
 [![asciicast](https://asciinema.org/a/211736.svg)](https://asciinema.org/a/211736)
+
+## Игра: "Наибольший общий делитель"
+
+Задача игрока - верно вычислить наибольший общий делитель и записать ответ
+
+### Запуск игры
+```sh
+$ brain-gcd
+```
+[![asciicast](https://asciinema.org/a/211890.svg)](https://asciinema.org/a/211890)
