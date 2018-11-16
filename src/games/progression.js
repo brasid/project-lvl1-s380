@@ -14,7 +14,7 @@ const taskAndAnswer = () => {
       gameTask = `${gameTask} .. `;
     } else gameTask = `${gameTask} ${start + step * index} `;
   }
-  const correctAnswer = start + step * missingIndex;
+  const correctAnswer = `${start + step * missingIndex}`;
   return cons(gameTask, correctAnswer);
 };
 const gameRule = 'What number is missing in the progression?';
