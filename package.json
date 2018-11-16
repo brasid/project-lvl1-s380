@@ -39,7 +39,6 @@
   },
   "dependencies": {
     "hexlet-pairs": "^1.0.8",
-    "npx": "^10.2.0",
     "readline-sync": "^1.4.9"
   }
 }
