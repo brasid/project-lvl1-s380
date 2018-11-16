@@ -2,20 +2,20 @@ import { cons } from 'hexlet-pairs';
 import getRandomNum from '../utils';
 import playGame from '..';
 
-const findGcd = (firstNum, secondNum) => {
-  const bigNum = Math.abs((firstNum >= secondNum) ? firstNum : secondNum);
-  const smallNum = Math.abs((firstNum <= secondNum) ? firstNum : secondNum);
-  if (smallNum === 0) {
-    return bigNum;
+const findGcd = (first, second) => {
+  const min = Math.min(first, second);
+  const max = Math.max(first, second);
+  if (min === 0) {
+    return max;
   }
-  return findGcd(smallNum, bigNum % smallNum);
+  return findGcd(min, max % min);
 };
 
 const taskAndAnswer = () => {
   const firstNum = getRandomNum(1, 100);
   const secondNum = getRandomNum(1, 100);
   const gameTask = `${firstNum} ${secondNum}`;
-  const correctAnswer = findGcd(firstNum, secondNum);
+  const correctAnswer = `${findGcd(firstNum, secondNum)}`;
   return cons(gameTask, correctAnswer);
 };
 const gameRule = 'Find the greatest common divisor of given numbers.';
