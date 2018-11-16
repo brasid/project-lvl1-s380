@@ -6,7 +6,7 @@ const isPlayerWin = (round, lastRound, taskAndAnswer) => {
     return true;
   }
   const getTaskAndAnswer = taskAndAnswer();
-  const gameTask = `Question ${car(getTaskAndAnswer)}s`;
+  const gameTask = `Question ${car(getTaskAndAnswer)}`;
   const correctAnswer = cdr(getTaskAndAnswer);
   const playerAnswer = readlineSync.question(`${gameTask}\nYour answer: `);
   if (playerAnswer !== correctAnswer) {
