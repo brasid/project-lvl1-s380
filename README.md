@@ -55,3 +55,13 @@ $ brain-gcd
 $ brain-progression
 ```
 [![asciicast](https://asciinema.org/a/211905.svg)](https://asciinema.org/a/211905)
+
+
+## Игра: "Простое ли число?"
+
+Задача игрока - ответить 'yes', если число простое, и 'no', если нет
+
+### Запуск игры
+```sh
+$ brain-prime
+```
