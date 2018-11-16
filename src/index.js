@@ -6,14 +6,14 @@ const isPlayerWin = (round, lastRound, taskAndAnswer) => {
     return true;
   }
   const getTaskAndAnswer = taskAndAnswer();
-  const gameTask = `Question ${car(getTaskAndAnswer)}  `;
+  const gameTask = `Question ${car(getTaskAndAnswer)}`;
   const correctAnswer = cdr(getTaskAndAnswer);
-  const playerAnswer = readlineSync.question(gameTask);
-  if (playerAnswer !== String(correctAnswer)) {
+  const playerAnswer = readlineSync.question(`${gameTask}\nYour answer: `);
+  if (playerAnswer !== correctAnswer) {
     console.log(`\n'${playerAnswer}' is wrong answer ;(. Correct answer was '${correctAnswer}'.\n`);
     return false;
   }
-  console.log(`\nYour answer: ${playerAnswer}\nCorrect!\n`);
+  console.log('\nCorrect!\n');
   return isPlayerWin(round + 1, lastRound, taskAndAnswer);
 };
 
