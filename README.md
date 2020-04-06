@@ -5,12 +5,13 @@
 [![Build Status](https://travis-ci.org/brasid/project-lvl1-s380.svg?branch=master)](https://travis-ci.org/brasid/project-lvl1-s380)
 
 ##
-Данный учебный проект организован компанией Hexlet.io. Он, в первую очередь, нацелен на знакомство с экосистемой JavaScript. В рамках проекта необходимо реализовать набор мини-игр, запускаемых из консоли. Эти игры похожи на то, что обычно называют "Brain Games".
+This is a student's project provided by hexlet. This is very first project of the course. The main purpose is to accustom pupil to JavaScript ecosystem. A result of the project should be a set of "Brain Games" working from console utility.
 
-Ментор проекта - [Александр О](https://github.com/alekgit).
+
+Project Mentor - [Alexander O](https://github.com/alekgit).
 ##
 
-## Установка
+## Installation
 ```sh
 $ npm install -g brasid_brain_games
 ```
@@ -61,7 +62,7 @@ $ brain-progression
 
 Задача игрока - ответить 'yes', если число простое, и 'no', если нет
 
-### Запуск игры
+### Start
 ```sh
 $ brain-prime
 ```
